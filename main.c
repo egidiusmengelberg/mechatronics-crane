@@ -3,8 +3,13 @@
 #include <avr/interrupt.h>
 #include <stdbool.h>
 
-int main(void) {
+#include "display.h"
 
+int main(void) {
+    initDisplay();
+
+    display(0,1,0);
+    
     while(true) {}
 }
 

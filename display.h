@@ -1,22 +1,8 @@
-enum displayChar {
-    ZERO,
-    ONE,
-    TWO,
-    THREE,
-    FOUR,
-    FIVE,
-    SIX,
-    SEVEN,
-    EIGHT,
-    NINE,
-    DASH,
-    E,
-    H,
-    L,
-    P,
-    BLANK
-};
+#include <avr/io.h>
+#include <stdbool.h>
+#include "config.h"
 
 void initDisplay();
-void display(displayChar c, char pos, char dp);
 void shiftOut(char val);
+void sendToDisplay(char addr, char data);
+void display(char seg, char val, bool dp);

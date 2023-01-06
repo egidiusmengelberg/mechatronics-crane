@@ -60,16 +60,16 @@
 //INTERFACES
 
     //DISPLAY
-    #define display_clock_ddr DDRA
-    #define display_clock_port PORTA
-    #define display_clock_num DDRA
+    #define display_din_ddr DDRB
+    #define display_din_port PORTB
+    #define display_din_num PB5
 
-    #define display_data_ddr DDRA
-    #define display_data_port PORTA
-    #define display_data_num DDRA
+    #define display_clk_ddr DDRB
+    #define display_clk_port PORTB
+    #define display_clk_num PB6
 
-    #define display_load_ddr DDRA
-    #define display_load_port PORTA
-    #define display_load_num DDRA
+    #define display_cs_ddr DDRB
+    #define display_cs_port PORTB
+    #define display_cs_num PB7
 
     //MOTOR
