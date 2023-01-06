@@ -60,7 +60,7 @@ void updateMenu() {
                 x_pos++;
             }
         }
-        _delay_ms(200);
+        _delay_ms(ui_input_delay);
     }
 
     if(downPressed()) {
@@ -78,12 +78,12 @@ void updateMenu() {
                 x_pos--;
             }
         }
-        _delay_ms(200);
+        _delay_ms(ui_input_delay);
     }
 
     if(selectPressed()) {
         axis_to_edit = !axis_to_edit;
-        _delay_ms(200);
+        _delay_ms(ui_input_delay);
     }
 }
 

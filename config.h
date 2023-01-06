@@ -1,4 +1,6 @@
 //GENERAL CONFIG
+    #define ui_input_delay 200
+
     #define axis_x_min 1
     #define axis_x_max 12
 
