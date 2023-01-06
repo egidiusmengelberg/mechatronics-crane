@@ -1,3 +1,10 @@
+//GENERAL CONFIG
+    #define axis_x_min 1
+    #define axis_x_max 12
+
+    #define axis_y_min 1
+    #define axis_y_max 12
+
 //INPUTS
 
     //AXIS BUTTONS
@@ -26,17 +33,17 @@
     #define button_position_y_num
 
     //UI BUTTONS
-    #define button_ui_up_ddr
-    #define button_ui_up_pin
-    #define button_ui_up_num
+    #define button_ui_up_ddr DDRF
+    #define button_ui_up_pin PINF
+    #define button_ui_up_num PF1
 
-    #define button_ui_down_ddr
-    #define button_ui_down_pin
-    #define button_ui_down_num
+    #define button_ui_down_ddr DDRF
+    #define button_ui_down_pin PINF
+    #define button_ui_down_num PF2
 
-    #define button_ui_select_ddr
-    #define button_ui_select_pin
-    #define button_ui_select_num
+    #define button_ui_select_ddr DDRF
+    #define button_ui_select_pin PINF
+    #define button_ui_select_num PF3
 
 //OUTPUTS
 
@@ -60,16 +67,16 @@
 //INTERFACES
 
     //DISPLAY
-    #define display_din_ddr DDRB
-    #define display_din_port PORTB
-    #define display_din_num PB5
+    #define display_din_ddr DDRC
+    #define display_din_port PORTC
+    #define display_din_num PC0
 
-    #define display_clk_ddr DDRB
-    #define display_clk_port PORTB
-    #define display_clk_num PB6
+    #define display_clk_ddr DDRC
+    #define display_clk_port PORTC
+    #define display_clk_num PC1
 
-    #define display_cs_ddr DDRB
-    #define display_cs_port PORTB
-    #define display_cs_num PB7
+    #define display_cs_ddr DDRC
+    #define display_cs_port PORTC
+    #define display_cs_num PC2
 
     //MOTOR
