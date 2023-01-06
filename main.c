@@ -6,6 +6,9 @@
 #include "display.h"
 #include "relay.h"
 #include "buttons.h"
+#include "config.h"
+
+enum state currentState = INIT;
 
 // position to go to after start button is pressed
 char x_pos = axis_x_min;
@@ -15,22 +18,35 @@ char y_pos = axis_y_min;
 bool axis_to_edit = false;
 
 int main(void) {
-    initDisplay();
-    initRelay();
-    
+
     while(true) {
-        updateMenu(&x_pos, &y_pos, &axis_to_edit);
+
+        switch (currentState)
+        {
+        case INIT:
+            initRelay();
+            initButtons();
+            initDisplay();
+            currentState = HOMING;
+            break;
+
+        case HOMING:
+            //homeAllAxis();
+            currentState = MENU;
+            break;
+        
+        case MENU:
+            updateMenu(&currentState, &x_pos, &y_pos, &axis_to_edit);
+            break;
+
+        case MOVING:
+            movingDisplay();
+            //make machine move
+            currentState = HOMING;
+            break;
+
+        default:
+            break;
+        }
     }
 }
-
-// home axis
-// wait for user input to select x pos
-// wait for user input to select y pos
-// wait for user input to start moving
-// move x axis to pickup position
-// move y axis to pickup position
-// pickup using z axis
-// move x axis to place position
-// move y axis to place position
-// drop down using z axis
-// home axis

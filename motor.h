@@ -2,7 +2,7 @@
 //motors as output, relays as output
 void initMotors();
 
-void homeAxis();
+void homeAllAxis();
 
 void moveMotor(char id, char direction);
 void stopMotor(char id);

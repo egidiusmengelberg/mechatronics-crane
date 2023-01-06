@@ -1,4 +1,14 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
 //GENERAL CONFIG
+    enum state {
+        INIT,
+        HOMING,
+        MENU,
+        MOVING
+    };
+
     #define ui_input_delay 200
 
     #define axis_x_min 1
@@ -52,19 +62,19 @@
     //RELAYS
     #define relay_x_ddr DDRC
     #define relay_x_port PORTC
-    #define relay_x_num PC0
+    #define relay_x_num PC3
 
     #define relay_y_ddr DDRC
     #define relay_y_port PORTC
-    #define relay_y_num PC1
+    #define relay_y_num PC4
 
     #define relay_z_ddr DDRC
     #define relay_z_port PORTC
-    #define relay_z_num PC2
+    #define relay_z_num PC5
 
     #define relay_magnet_ddr DDRC
     #define relay_magnet_port PORTC
-    #define relay_magnet_num PC3
+    #define relay_magnet_num PC6
 
 //INTERFACES
 
@@ -82,3 +92,5 @@
     #define display_cs_num PC2
 
     //MOTOR
+
+#endif

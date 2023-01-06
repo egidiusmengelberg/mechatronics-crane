@@ -58,7 +58,8 @@ void display(char seg, char val, bool dp) {
     sendToDisplay(seg+1, data);
 }
 
-void updateMenu(char* x_pos, char* y_pos, bool* axis_to_edit) {
+void updateMenu(enum state *currentState, char* x_pos, char* y_pos, bool* axis_to_edit) {
+
     ox=*x_pos%10; 
     tx=(*x_pos/10)%10; 
 
@@ -81,7 +82,6 @@ void updateMenu(char* x_pos, char* y_pos, bool* axis_to_edit) {
         display(3, 0x0F, 0);
         display(7, 0x0A, 0); 
     }
-    
 
     if(upPressed()) {
         if (*axis_to_edit)
@@ -122,5 +122,13 @@ void updateMenu(char* x_pos, char* y_pos, bool* axis_to_edit) {
     if(selectPressed()) {
         *axis_to_edit = !*axis_to_edit;
         _delay_ms(ui_input_delay);
+    }
+}
+
+void movingDisplay() {
+    //all segments show line
+    for (char i = 0; i < 8; i++)
+    {
+        display(i, 0x0A, 0);
     }
 }

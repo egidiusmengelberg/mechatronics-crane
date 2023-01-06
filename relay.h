@@ -1,3 +1,6 @@
+#ifndef RELAY_H
+#define RELAY_H
+
 #include <avr/io.h>
 #include <stdbool.h>
 
@@ -13,3 +16,5 @@ void motorsOff();
 
 void magnetOn();
 void magnetOff();
+
+#endif
