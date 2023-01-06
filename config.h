@@ -41,21 +41,21 @@
 //OUTPUTS
 
     //RELAYS
-    #define relay_x_ddr DDRA
-    #define relay_x_port PORTA
-    #define relay_x_num 1
+    #define relay_x_ddr DDRC
+    #define relay_x_port PORTC
+    #define relay_x_num PC0
 
-    #define relay_y_ddr DDRA
-    #define relay_y_port PORTA
-    #define relay_y_num 2
+    #define relay_y_ddr DDRC
+    #define relay_y_port PORTC
+    #define relay_y_num PC1
 
-    #define relay_z_ddr DDRA
-    #define relay_z_port PORTA
-    #define relay_z_num 3
+    #define relay_z_ddr DDRC
+    #define relay_z_port PORTC
+    #define relay_z_num PC2
 
-    #define relay_magnet_ddr DDRA
-    #define relay_magnet_port PORTA
-    #define relay_magnet_num 4
+    #define relay_magnet_ddr DDRC
+    #define relay_magnet_port PORTC
+    #define relay_magnet_num PC3
 
 //INTERFACES
 

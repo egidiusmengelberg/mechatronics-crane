@@ -4,13 +4,28 @@
 #include <stdbool.h>
 
 #include "display.h"
+#include "relay.h"
 
 int main(void) {
     initDisplay();
-
-    display(0,1,0);
+    initRelay();
     
-    while(true) {}
+    while(true) {
+        selectMotorX();
+        _delay_ms(500);
+        selectMotorY();
+        _delay_ms(500);
+        selectMotorZ();
+        _delay_ms(500);
+
+        motorsOff();
+        _delay_ms(500);
+
+        magnetOn();
+        _delay_ms(500);
+        magnetOff();
+        _delay_ms(500);
+    }
 }
 
 // home axis
