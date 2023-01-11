@@ -123,6 +123,11 @@ void updateMenu(enum state *currentState, char* x_pos, char* y_pos, bool* axis_t
         *axis_to_edit = !*axis_to_edit;
         _delay_ms(ui_input_delay);
     }
+
+    if(startPressed()) {
+        *currentState = MOVING;
+        _delay_ms(ui_input_delay);
+    }
 }
 
 void movingDisplay() {
@@ -130,5 +135,20 @@ void movingDisplay() {
     for (char i = 0; i < 8; i++)
     {
         display(i, 0x0A, 0);
+    }
+}
+
+void errorDisplay() {
+    //all segments show E
+    for (char i = 0; i < 8; i++)
+    {
+        display(i, 0x0B, 0);
+    }
+}
+
+void clearDisplay() {
+    for (char i = 0; i < 8; i++)
+    {
+        display(i, 0x0F, 0);
     }
 }

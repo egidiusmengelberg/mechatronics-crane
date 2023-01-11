@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "io.h": "c",
-        "config.h": "c"
+        "config.h": "c",
+        "buttons.h": "c",
+        "motor.h": "c"
     }
 }
