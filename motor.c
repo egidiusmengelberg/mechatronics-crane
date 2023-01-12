@@ -13,10 +13,13 @@ void initMotors() {
 void homeAllAxis() {
     //home x
     while (!homeXPressed()) { moveMotor(X, BACKWARDS); }
+    stopMotors();
     //home y
     while (!homeYPressed()) { moveMotor(Y, BACKWARDS); }
+    stopMotors();
     //home z
     while (!minZPressed()) { moveMotor(Z, BACKWARDS); }
+    stopMotors();
 }
 
 void moveMotor(enum motor id, enum motorDirection direction) {
@@ -66,6 +69,8 @@ void moveXTo(char p) {
     {
         while (!posXPressed()) { moveMotor(X, FORWARD); }
     }
+
+    stopMotors();
     
 }
 
@@ -77,12 +82,16 @@ void moveYTo(char p) {
     {
         while (!posYPressed()) { moveMotor(Y, FORWARD); }
     }
+
+    stopMotors();
 }
 
 void moveZUp() {
     while (!minZPressed()) { moveMotor(Z, BACKWARDS); }
+    stopMotors();
 }
 
 void moveZDown() {
     while (!maxZPressed()) { moveMotor(Z, FORWARD); }
+    stopMotors();
 }
