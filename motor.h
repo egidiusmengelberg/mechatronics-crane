@@ -1,6 +1,8 @@
 #ifndef MOTOR_H
 #define MOTOR_H
 
+#include <util/delay.h>
+
 #include "relay.h"
 #include "config.h"
 #include "buttons.h"

@@ -21,6 +21,7 @@
     };
 
     #define ui_input_delay 200
+    #define motor_z_down_time 1000
 
     #define axis_x_min 1
     #define axis_x_max 12
@@ -35,35 +36,30 @@
 //INPUTS
 
     //AXIS BUTTONS
-    #define button_home_x_ddr DDRF
-    #define button_home_x_pin PINF
-    #define button_home_x_port PORTF
-    #define button_home_x_num PF0
+    #define button_home_x_ddr DDRA // pin 23
+    #define button_home_x_pin PINA
+    #define button_home_x_port PORTA
+    #define button_home_x_num PA1
 
-    #define button_home_y_ddr DDRF
-    #define button_home_y_pin PINF
-    #define button_home_y_port PORTF
-    #define button_home_y_num PF1
+    #define button_home_y_ddr DDRA // pin 25
+    #define button_home_y_pin PINA
+    #define button_home_y_port PORTA
+    #define button_home_y_num PA3
 
-    #define button_min_z_ddr DDRF
-    #define button_min_z_pin PINF
-    #define button_min_z_port PORTF 
-    #define button_min_z_num PF2
+    #define button_min_z_ddr DDRA // pin 27
+    #define button_min_z_pin PINA
+    #define button_min_z_port PORTA 
+    #define button_min_z_num PA5
 
-    #define button_max_z_ddr DDRF
-    #define button_max_z_pin PINF
-    #define button_max_z_port PORTF
-    #define button_max_z_num PF3
+    #define button_position_x_ddr DDRC // pin 33
+    #define button_position_x_pin PINC
+    #define button_position_x_port PORTC
+    #define button_position_x_num PC4
 
-    #define button_position_x_ddr DDRF
-    #define button_position_x_pin PINF
-    #define button_position_x_port PORTF
-    #define button_position_x_num PF4
-
-    #define button_position_y_ddr DDRF
-    #define button_position_y_pin PINF
-    #define button_position_y_port PORTF
-    #define button_position_y_num PF5
+    #define button_position_y_ddr DDRC // pin 31
+    #define button_position_y_pin PINC
+    #define button_position_y_port PORTC
+    #define button_position_y_num PC6
 
     //UI BUTTONS
     #define button_ui_up_ddr DDRF
@@ -104,6 +100,11 @@
     #define relay_magnet_ddr DDRC
     #define relay_magnet_port PORTC
     #define relay_magnet_num PC6
+
+    //LIGHTS
+    #define light_panel_ddr DDRC
+    #define light_panel_port PORTC
+    #define light_panel_num PC6
 
 //INTERFACES
 

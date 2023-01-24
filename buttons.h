@@ -15,7 +15,6 @@ bool startPressed();
 bool homeXPressed();
 bool homeYPressed();
 bool minZPressed();
-bool maxZPressed();
 bool posXPressed();
 bool posYPressed();
 

@@ -17,7 +17,6 @@ void initButtons() {
     button_home_x_ddr &= ~(1 << button_home_x_num);
     button_home_y_ddr &= ~(1 << button_home_y_num);
     button_min_z_ddr &= ~(1 << button_min_z_num);
-    button_max_z_ddr &= ~(1 << button_max_z_num);
     button_position_x_ddr &= ~(1 << button_position_x_num);
     button_position_y_ddr &= ~(1 << button_position_y_num);
 
@@ -25,7 +24,6 @@ void initButtons() {
     button_home_x_ddr |= (1 << button_home_x_num);
     button_home_y_ddr |= (1 << button_home_y_num);
     button_min_z_ddr |= (1 << button_min_z_num);
-    button_max_z_ddr |= (1 << button_max_z_num);
     button_position_x_ddr |= (1 << button_position_x_num);
     button_position_y_ddr |= (1 << button_position_y_num);
 }
@@ -56,10 +54,6 @@ bool homeYPressed() {
 
 bool minZPressed() {
     return !(button_min_z_pin & (1 << button_min_z_num));
-}
-
-bool maxZPressed() {
-    return !(button_max_z_pin & (1 << button_max_z_num));
 }
 
 bool posXPressed() {

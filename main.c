@@ -4,6 +4,7 @@
 #include <avr/interrupt.h>
 
 #include "relay.h"
+#include "lights.h"
 #include "motor.h"
 #include "config.h"
 #include "display.h"
@@ -27,6 +28,7 @@ int main(void) {
         // init machine
         case INIT:
             initRelay();
+            initLights();
             initMotors();
             initButtons();
             initDisplay();
@@ -34,7 +36,9 @@ int main(void) {
             break;
         // home machine
         case HOMING:
+            lightsOn();
             homeAllAxis();
+            lightsOff();
             currentState = MENU;
             break;
         // show menu
@@ -44,15 +48,15 @@ int main(void) {
         // pick and place
         case MOVING:
             movingDisplay();
-            
+            lightsOn();
             //make machine move
             moveXTo(x_pickup_position);
             moveYTo(y_pickup_position);
             moveZDown();
             magnetOn();
             moveZUp();
-            moveXTo(x_pos - 1);
-            moveYTo(y_pos - 1);
+            moveXTo(x_pos);
+            moveYTo(y_pos);
             moveZDown();
             magnetOff();
             moveZUp();
@@ -60,7 +64,7 @@ int main(void) {
             //reset position variables
             x_pos = axis_x_min;
             y_pos = axis_y_min;
-
+    	    lightsOff();
             clearDisplay(); 
 
             currentState = HOMING;

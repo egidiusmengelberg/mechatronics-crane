@@ -65,7 +65,7 @@ void moveXTo(char p) {
     //home x
     while (!homeXPressed()) { moveMotor(X, BACKWARDS); }
     // move x until p amount of presses on x pos switch
-    for (char i = 0; i < p; i++)
+    for (char i = 0; i < p - 1; i++)
     {
         while (!posXPressed()) { moveMotor(X, FORWARD); }
     }
@@ -78,7 +78,7 @@ void moveYTo(char p) {
     //home x
     while (!homeYPressed()) { moveMotor(Y, BACKWARDS); }
     // move x until p amount of presses on x pos switch
-    for (char i = 0; i < p; i++)
+    for (char i = 0; i < p - 1; i++)
     {
         while (!posYPressed()) { moveMotor(Y, FORWARD); }
     }
@@ -92,6 +92,7 @@ void moveZUp() {
 }
 
 void moveZDown() {
-    while (!maxZPressed()) { moveMotor(Z, FORWARD); }
+    moveMotor(Z, FORWARD);
+    _delay_ms(motor_z_down_time);
     stopMotors();
 }
