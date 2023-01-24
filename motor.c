@@ -42,12 +42,12 @@ void moveMotor(enum motor id, enum motorDirection direction) {
     switch (direction)
     {
     case FORWARD:
-        motor_en_l_port &= ~(1 << motor_en_l_num);
-        motor_en_r_port |= (1 << motor_en_r_num);
-        break;
-    case BACKWARDS:
         motor_en_l_port |= (1 << motor_en_l_num);
         motor_en_r_port &= ~(1 << motor_en_r_num);
+        break;
+    case BACKWARDS:
+        motor_en_l_port &= ~(1 << motor_en_l_num);
+        motor_en_r_port |= (1 << motor_en_r_num);
         break;
     default:
         stopMotors();
@@ -61,26 +61,30 @@ void stopMotors() {
     motorsOff();
 }
 
-void moveXTo(char p) {
-    //home x
-    while (!homeXPressed()) { moveMotor(X, BACKWARDS); }
+void moveXTo(char x_pos) {
     // move x until p amount of presses on x pos switch
-    for (char i = 0; i < p - 1; i++)
-    {
-        while (!posXPressed()) { moveMotor(X, FORWARD); }
+    char curr_pos = 0;
+    while (curr_pos <= x_pos) { 
+        moveMotor(X, FORWARD); 
+        if (posXPressed()) {
+            curr_pos++;
+        }
+        _delay_ms(250);
     }
 
     stopMotors();
     
 }
 
-void moveYTo(char p) {
-    //home x
-    while (!homeYPressed()) { moveMotor(Y, BACKWARDS); }
+void moveYTo(char y_pos) {
     // move x until p amount of presses on x pos switch
-    for (char i = 0; i < p - 1; i++)
-    {
-        while (!posYPressed()) { moveMotor(Y, FORWARD); }
+    char curr_pos = 0;
+    while (curr_pos <= y_pos) { 
+        moveMotor(Y, FORWARD); 
+        if (posYPressed()) {
+            curr_pos++;
+        }
+        _delay_ms(500);
     }
 
     stopMotors();

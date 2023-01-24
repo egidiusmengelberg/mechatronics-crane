@@ -21,11 +21,11 @@ void initButtons() {
     button_position_y_ddr &= ~(1 << button_position_y_num);
 
     //axis buttons input pullup
-    button_home_x_ddr |= (1 << button_home_x_num);
-    button_home_y_ddr |= (1 << button_home_y_num);
-    button_min_z_ddr |= (1 << button_min_z_num);
-    button_position_x_ddr |= (1 << button_position_x_num);
-    button_position_y_ddr |= (1 << button_position_y_num);
+    button_home_x_port |= (1 << button_home_x_num);
+    button_home_y_port |= (1 << button_home_y_num);
+    button_min_z_port |= (1 << button_min_z_num);
+    button_position_x_port |= (1 << button_position_x_num);
+    button_position_y_port |= (1 << button_position_y_num);
 }
 
 bool upPressed() {

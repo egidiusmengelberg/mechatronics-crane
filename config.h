@@ -21,16 +21,13 @@
     };
 
     #define ui_input_delay 200
-    #define motor_z_down_time 1000
+    #define motor_z_down_time 3000
 
     #define axis_x_min 1
-    #define axis_x_max 12
+    #define axis_x_max 10
 
     #define axis_y_min 1
-    #define axis_y_max 12
-
-    #define x_pickup_position 2
-    #define y_pickup_position 2
+    #define axis_y_max 6
 
 
 //INPUTS

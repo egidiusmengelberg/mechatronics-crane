@@ -49,9 +49,7 @@ int main(void) {
         case MOVING:
             movingDisplay();
             lightsOn();
-            //make machine move
-            moveXTo(x_pickup_position);
-            moveYTo(y_pickup_position);
+            homeAllAxis();
             moveZDown();
             magnetOn();
             moveZUp();
@@ -66,8 +64,8 @@ int main(void) {
             y_pos = axis_y_min;
     	    lightsOff();
             clearDisplay(); 
-
-            currentState = HOMING;
+            homeAllAxis();
+            currentState = MENU;
             break;
         // oh dear, something went terribly wrong, this should not be possible
         default:
